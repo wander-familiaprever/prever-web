@@ -5,9 +5,40 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{% static 'core/css/login.css'  %}">
 <link rel="stylesheet" type="text/css" href="{% static 'core/css/materialize.min.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-material-ui@2/material-ui.css">
 
+<style>
+   #msg {
+      flex-direction: row;
+      align-items: center;
+      width: 30%;
+      padding: 0.225em;
+      overflow-y: hidden;
+      box-shadow: 0 0 0.625em #d9d9d9;
+      margin-left: 35%;
+      background-color: #8bc34a;
+      text-align: center; 
+    }
+</style>
 
-<div class="section"></div>
+<center>
+
+<div class="section">
+  {% if mensagem %}
+    <div class="col s12 m4"></div>
+    <div class="col s12 m4">
+      <div class="card-panel light-green lighten-1" style="width:50%;height:auto;margin-top:1px">
+        <!--<a class="btn-floating pulse red"><i class="material-icons">error</i></a> -->
+        <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_sphef4gn.json"  background="transparent"  speed="1"  style="width: 50px; height: 50px;"  loop autoplay></lottie-player>
+        <span class="white-text">Usuário ou senha não encontrado.</span>        
+              
+      </div>
+    </div>
+    <div class="col s12 m4"></div>
+  {% endif %}
+</div>
+
+</center>
   <main>
     <center>
       <img class="responsive-img" style="width: 200px;" src="{% static 'core/img/logo-site-prever.png' %}" />
@@ -17,15 +48,16 @@
         <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
           
           <h5 class="indigo-text">Entre com seu usuário e senha</h5>  
-          
-          <form class="col s12" method="post">
+             
+
+          <form class="col s12" action="." method="post">
             {% csrf_token %}
             
             <div class='row'>
               <div class='col s12'>
               </div>
             </div>
-
+            
             <div class='row'>
               <div class='input-field col s12'>
                 <input class='validate' type='text' name='usuario' id='usuario' />
@@ -67,4 +99,5 @@
 
 <script src="{% static 'core/js/materialize.min.js' %}"></script>
 <script src="{% static 'core/js/login.js' %}"></script>
-
+<script src="{% static 'core/js/sweetalert.min.js' %}"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>

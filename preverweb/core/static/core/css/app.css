@@ -1,0 +1,17 @@
+body{
+    background-color: #EBF4F6;
+}
+
+.center-align {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 10px;
+    display: flexbox;
+}
+
+.icon_menu{
+  width: 20px;
+  height: 20px;
+}
